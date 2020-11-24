@@ -5,3 +5,8 @@
 * Text Classification: imdb, reuters
 * Regresison: boston_housing
 
+
+
+<img src='images/keras-homepage-main_top_page.png'>
+
+<img src='images/keras-homepage-menus.png'>
