@@ -1,6 +1,6 @@
 * Draft: 2020-11-12 (Thu)
 
-# 텐서플로우 설치하기
+# 텐서플로우 설치하기 (Installing TensorFlow)
 
 
 
