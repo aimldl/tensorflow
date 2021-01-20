@@ -53,6 +53,9 @@ $
 설치가 안 되어 있습니다.
 
 ### Step 2-2. 터미널에서 아래 명령어로 설치
+아래의 명령어를 실행합니다.
+
+출처: [TensorFlow](https://www.tensorflow.org/) > [TensorFlow 2 설치](https://www.tensorflow.org/install) > [GPU 지원](https://www.tensorflow.org/install/gpu)의 [Linux 설정 > apt를 사용하여 CUDA 설치](https://www.tensorflow.org/install/gpu#install_cuda_with_apt)
 
 ```bash
 # Add NVIDIA package repositories
