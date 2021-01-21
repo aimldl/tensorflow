@@ -1,3 +1,4 @@
+* Rev.1: 2021-01-20 (Wed)
 * Draft: 2020-11-12 (Thu)
 
 # 텐서플로우 설치하기 (Installing TensorFlow)
@@ -51,6 +52,9 @@ $
 설치가 안 되어 있습니다.
 
 ### Step 2-2. 터미널에서 아래 명령어로 설치
+아래의 명령어를 실행합니다.
+
+출처: [TensorFlow](https://www.tensorflow.org/) > [TensorFlow 2 설치](https://www.tensorflow.org/install) > [GPU 지원](https://www.tensorflow.org/install/gpu)의 [Linux 설정 > apt를 사용하여 CUDA 설치](https://www.tensorflow.org/install/gpu#install_cuda_with_apt)
 
 ```bash
 # Add NVIDIA package repositories
@@ -83,20 +87,20 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
 
 ```bash
 $ nvidia-smi
-Thu Nov 12 15:24:19 2020       
+Wed Jan 20 17:29:55 2021       
 +-----------------------------------------------------------------------------+
-| NVIDIA-SMI 455.32.00    Driver Version: 455.32.00    CUDA Version: 11.1     |
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
 |===============================+======================+======================|
 |   0  GeForce GTX 1080    On   | 00000000:01:00.0  On |                  N/A |
-| 27%   33C    P8     9W / 180W |    188MiB /  8118MiB |      2%      Default |
+| 28%   32C    P8     8W / 180W |    136MiB /  8118MiB |      0%      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
 |   1  GeForce GTX 1080    On   | 00000000:02:00.0 Off |                  N/A |
-| 27%   29C    P8     5W / 180W |      2MiB /  8119MiB |      0%      Default |
+| 27%   28C    P8     5W / 180W |      2MiB /  8119MiB |      0%      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
                                                                                
@@ -105,12 +109,8 @@ Thu Nov 12 15:24:19 2020
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
 |        ID   ID                                                   Usage      |
 |=============================================================================|
-|    0   N/A  N/A       487      G   ...AAAAAAAAA= --shared-files       36MiB |
-|    0   N/A  N/A      1206      G   /usr/lib/xorg/Xorg                104MiB |
-|    0   N/A  N/A      1322      G   /usr/bin/gnome-shell               43MiB |
-|    1   N/A  N/A       487      G   ...AAAAAAAAA= --shared-files        0MiB |
-|    1   N/A  N/A      1206      G   /usr/lib/xorg/Xorg                  0MiB |
-|    1   N/A  N/A      1322      G   /usr/bin/gnome-shell                0MiB |
+|    0   N/A  N/A      1120      G   /usr/lib/xorg/Xorg                 96MiB |
+|    0   N/A  N/A      1250      G   /usr/bin/gnome-shell               36MiB |
 +-----------------------------------------------------------------------------+
 $
 ```
