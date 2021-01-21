@@ -3,20 +3,46 @@
 
 # 텐서플로우 설치하기 (Installing TensorFlow)
 
-[TensorFlow 2 설치](https://www.tensorflow.org/install), https://www.tensorflow.org/install
+## 개요
 
-### Step 1. 패키지 다운로드
+[Install TensorFlow 2](https://www.tensorflow.org/install)의 내용을 정리했습니다. 설치 가이드의 한국어판은 [TensorFlow 2 설치](https://www.tensorflow.org/install)입니다. 한국어 설치 가이드보다 원본인 영어를 참고하시길 권장합니다. 이유는 [왜 영어 설치 가이드를 참고해야 하는가?](tensorflow-installation_guide_is_wrong.md)를 참고하세요.
 
-`pip`을 최신 버전으로 업데이트/설치하고, 텐서플로우를 CPU와 GPU가 지원되는 안정적인 최신 버전 (current stable release)으로 설치합니다.  
+> ### [Install TensorFlow 2](https://www.tensorflow.org/install)
+>
+> TensorFlow is tested and supported on the following 64-bit systems:
+>
+> * Python 3.5–3.8
+> * Ubuntu 16.04 or later
+> * Windows 7 or later (with [C++ redistributable](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)) 
+> * macOS 10.12.6 (Sierra) or later (no GPU support)
+> * Raspbian 9.0 or later
+>
+> **[Download a package](https://www.tensorflow.org/install/pip)**
+>
+> Install TensorFlow with Python's *pip* package manager.
+>
+> >  TensorFlow 2 packages require a `pip` version >19.0.
+>
+> Official packages available for Ubuntu, Windows, macOS, and the Raspberry Pi.
+>
+> See the [GPU guide](https://www.tensorflow.org/install/gpu) for CUDA®-enabled cards.
+>
+> ```bash
+> # Requires the latest pip
+> pip install --upgrade pip
+> 
+> # Current stable release for CPU and GPU
+> pip install tensorflow
+> 
+> # Or try the preview build (unstable)
+> pip install tf-nightly
+> ```
+>
+> 출처: https://www.tensorflow.org/install
 
-```bash
-$ pip install --upgrade pip
-$ pip install tensorflow
-```
+## 설치 과정
 
-### Step 2. GPU를 사용하기 위해 설정
-
-[GPU지원](https://www.tensorflow.org/install/gpu), https://www.tensorflow.org/install/gpu
+### Step 1. GPU를 사용하기 위해 설정
 
 > TensorFlow GPU 지원에는 다양한 드라이버와 라이브러리가 필요합니다. 설치를 단순화하고 라이브러리 충돌을 방지하려면 [GPU를 지원하는 TensorFlow Docker 이미지](https://www.tensorflow.org/install/docker)를 사용하는 것이 좋습니다(Linux만 해당). 이 설정에는 [NVIDIA® GPU 드라이버](https://www.nvidia.com/drivers)만 있으면 됩니다.
 
@@ -29,6 +55,8 @@ $ pip install tensorflow
 > - [CUPTI](http://docs.nvidia.com/cuda/cupti/)는 CUDA® Toolkit과 함께 제공됩니다.
 > - [cuDNN SDK 7.6](https://developer.nvidia.com/cudnn)
 > - *(선택사항)* [TensorRT 6.0](https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html) - 일부 모델에서 추론 처리량과 지연 시간을 향상합니다.
+>
+> 출처: [GPU지원](https://www.tensorflow.org/install/gpu)
 
 > **apt를 사용하여 CUDA 설치**
 >
@@ -86,32 +114,68 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
 ### Step 2-3. 설치 완료 후에 확인
 
 ```bash
-$ nvidia-smi
-Wed Jan 20 17:29:55 2021       
+Welcome to ubuntu18.04, Python 3.6.9,
+aimldl@aimldl-home-desktop:~$ nvidia-smi
+Thu Jan 21 18:33:14 2021
 +-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
+| NVIDIA-SMI 450.102.04   Driver Version: 450.102.04   CUDA Version: 11.0     |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
 |===============================+======================+======================|
-|   0  GeForce GTX 1080    On   | 00000000:01:00.0  On |                  N/A |
-| 28%   32C    P8     8W / 180W |    136MiB /  8118MiB |      0%      Default |
+|   0  GeForce GTX 1080    On   | 00000000:01:00.0 Off |                  N/A |
+|  0%   32C    P8     6W / 200W |    309MiB /  8118MiB |      0%      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
-|   1  GeForce GTX 1080    On   | 00000000:02:00.0 Off |                  N/A |
-| 27%   28C    P8     5W / 180W |      2MiB /  8119MiB |      0%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
+
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
 |        ID   ID                                                   Usage      |
 |=============================================================================|
-|    0   N/A  N/A      1120      G   /usr/lib/xorg/Xorg                 96MiB |
-|    0   N/A  N/A      1250      G   /usr/bin/gnome-shell               36MiB |
+|    0   N/A  N/A      1105      G   /usr/lib/xorg/Xorg                168MiB |
+|    0   N/A  N/A      1236      G   /usr/bin/gnome-shell              137MiB |
 +-----------------------------------------------------------------------------+
+aimldl@aimldl-home-desktop:~$ nvcc --version
+
+Command 'nvcc' not found, but can be installed with:
+
+sudo apt install nvidia-cuda-toolkit
+
+aimldl@aimldl-home-desktop:~$
+
+```
+
+
+
+### Step 2. 패키지 다운로드
+
+`pip`을 최신 버전으로 업데이트/설치하고, 텐서플로우를 CPU와 GPU가 지원되는 안정적인 최신 버전 (current stable release)으로 설치합니다.  
+
+> ```bash
+> # Requires the latest pip
+> pip install --upgrade pip
+> 
+> # Current stable release for CPU and GPU
+> pip install tensorflow
+> 
+> # Or try the preview build (unstable)
+> pip install tf-nightly
+> ```
+
+```bash
+$ pip install --upgrade pip
+$ pip install tensorflow
+```
+
+### Step 3. 설치 확인하기
+
+```bash
+$ python -c "import tensorflow as tf"
+2021-01-21 19:37:24.599962: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory
+2021-01-21 19:37:24.600092: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory
+2021-01-21 19:37:24.600102: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
 $
 ```
 
