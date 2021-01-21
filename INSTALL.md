@@ -2,8 +2,6 @@
 
 # 텐서플로우 설치하기 (Installing TensorFlow)
 
-
-
 [TensorFlow 2 설치](https://www.tensorflow.org/install), https://www.tensorflow.org/install
 
 ### Step 1. 패키지 다운로드

@@ -13,5 +13,15 @@
 * [GPU 연산 환경 (GPU Computing Environment)](../environments/gpu_computing_environment/INSTALL.md) > [GPU 연산 환경 구축하기 (Setting up GPU Computing Environments)](../environments/gpu_computing_environment/READMD.md) > [텐서플로를 위한 GPU 연산 환경 설정하기 (Setting up the GPU Computing Environments for TensorFlow)](../environments/gpu_computing_environment/set_up/gpu_computing_environments_for_tensorflow.md)
 * [텐서플로 설치하기 (Installing TensorFlow)](INSTALL.md)
 
+## 텐서플로 유튜브 채널, https://www.youtube.com/tensorflow
 
+<img src='images/youtube-tensorflow_channel.png'>
 
+## http://playground.tensorflow.org/
+
+<img src='images/tensorflow_playground-circle_dataset.png'>
+
+## Seedbank
+
+* [Seedbank — discover machine learning examples](https://medium.com/tensorflow/seedbank-discover-machine-learning-examples-2ff894542b57), 2018-07-13, Medium, Michael Tyka
+  * introduces Seedbank. TODO: read & summarize
